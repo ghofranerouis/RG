@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المساعد الذكي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html">
+        <img src="logo/logo.jpg" alt="شعار النادي" class="logo">
+    </a>
+    
+    <h1>المساعد الذكي</h1>
+    <p>اطلب من المساعد اقتراحات كتب أو تفاعل معه عبر اللغة الطبيعية بسهولة.</p>
+</div>
+
+<div class="assistant-box">
+    <!-- صندوق الدردشة -->
+    <div id="results" class="results"></div>
+
+    <!-- إدخال الرسائل أسفل الدردشة -->
+    <div class="input-area">
+        <textarea id="question" rows="2" placeholder="مثال: مرحبا، ما هو اسمك؟"></textarea>
+        <button onclick="sendMessage()">إرسال</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
