@@ -95,8 +95,8 @@ p {
 /* شبكة الكتب */
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* صف يحتوي على كتابين */
-    gap: 20px; /* زيادة المسافة بين الكتب */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     justify-content: center;
     padding: 15px;
 }
@@ -109,7 +109,7 @@ p {
     padding: 8px;
     transition: transform 0.2s;
     width: 100%;
-    max-width: 180px; /* تصغير حجم الكتاب */
+    max-width: 180px;
     margin: auto;
 }
 
@@ -119,14 +119,14 @@ p {
 
 .book img {
     width: 100%;
-    height: 200px; /* زيادة طول الغلاف ليكون واضحًا */
+    height: 200px;
     object-fit: cover;
     border-radius: 6px;
 }
 
 @media (max-width: 600px) {
     .books-grid {
-        grid-template-columns: repeat(1, 1fr); /* كتاب واحد في الصف عند الشاشات الصغيرة */
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -152,7 +152,6 @@ p {
     font-weight: bold;
     margin-top: 3px;
 }
-
 
 /* شريط البحث */
 .search-bar {
@@ -194,6 +193,7 @@ p {
 .search-bar i {
     font-size: 18px;
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -206,6 +206,7 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 .modal-content {
     background: #8a2be2;
     padding: 20px;
@@ -214,13 +215,116 @@ p {
     width: 80%;
     max-width: 400px;
 }
+
 .close {
     cursor: pointer;
     color: red;
     float: right;
     font-size: 20px;
 }
+
 .author {
     color: #C0C0C0;
     font-weight: bold;
+}
+
+/* ======================= */
+
+/* صندوق المساعد */
+.assistant-box {
+    background: transparent; /* يسمح لرؤية الخلفية */
+    color: #fff;
+    padding: 15px;
+    width: 85%;
+    margin: 30px auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* صندوق الرسائل */
+.assistant-box .results {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* إدخال الرسائل أسفل */
+.assistant-box .input-area {
+    display: flex;
+    gap: 10px;
+}
+
+/* textarea */
+.assistant-box textarea {
+    flex: 1;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    outline: none;
+}
+
+.assistant-box textarea::placeholder {
+    color: #ddd;
+}
+
+/* زر الإرسال */
+.assistant-box button {
+    background: #7a1ebd; /* متناسق مع الخلفية */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.assistant-box button:hover {
+    background: #8a2be2;
+}
+
+/* فقاعات الرسائل */
+.assistant-box .message {
+    padding: 12px 18px;
+    margin: 5px 0;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* رسالة المستخدم */
+.assistant-box .message.user {
+    background: #6a0dad; /* أرجواني داكن */
+    color: #fff;
+    align-self: flex-end;
+}
+
+/* رسالة المساعد */
+.assistant-box .message.bot {
+    background: rgba(138, 43, 226, 0.3); /* أرجواني فاتح شبه شفاف */
+    color: #fff;
+    align-self: flex-start;
+}
+
+/* تمرير سلس */
+.assistant-box .results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.assistant-box .results::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 3px;
 }
